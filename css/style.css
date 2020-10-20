@@ -1095,7 +1095,7 @@ select::-ms-expand {
     justify-content: center;
     margin: 0;
     font-size: 20px;
-    font-weight: 900;
+    font-weight: 400;
   }
   .footer__item {
     display: -webkit-box;
