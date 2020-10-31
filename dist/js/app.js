@@ -1,5 +1,3 @@
-"use strict";
-
 /* Script */
 
 /* Button Up */
@@ -15,8 +13,8 @@ window.addEventListener('scroll', function () {
     buttonUp.style.pointerEvents = 'none';
   }
 });
-/* Anchors */
 
+/* Anchors */
 var anchors = document.querySelectorAll('a[href*="#"]');
 anchors.forEach(function (item) {
   item.addEventListener('click', function (event) {
@@ -28,4 +26,3 @@ anchors.forEach(function (item) {
     });
   });
 });
-/* LIBRARIES */
