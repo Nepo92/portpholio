@@ -318,9 +318,10 @@ h1, h2, h3, h4, h5, h6 {
 
   &__item {
     display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+    flex-flow: row wrap;
+    justify-content: flex-start;
     font-size: 20px;
+    padding: 0 10px;
     margin-top: 10px;
   }
 
@@ -377,6 +378,7 @@ h1, h2, h3, h4, h5, h6 {
   &__item {
     position: relative;
     width: 100%;
+    height: auto;
     margin: 15px auto;
     padding: 0px;
     background-color: white;
@@ -426,7 +428,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     padding: 0 5px 15px 5px;
-
     b {
       margin-right: 10px;
     }
@@ -442,7 +443,7 @@ h1, h2, h3, h4, h5, h6 {
   &__icon {
     width: 16px;
     height: 16px;
-    margin-right: 10px;
+    margin-right: 2px;
   }
 }
 
@@ -483,7 +484,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   &__title {
-    font-size: 32px;
+    font-size: 25px;
     margin: 30px 0;
     font-weight: 400;
   }
@@ -493,8 +494,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   &__img {
-    width: 100px;
-    height: 40px;
+    width: 150px;
+    height: 100px;
   }
 
   &__list {
@@ -509,8 +510,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   &__icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     transition: all .2s linear;
 
     &:first-child {
@@ -597,28 +598,53 @@ h1, h2, h3, h4, h5, h6 {
   
   .works {
     padding-bottom: 30px;
+    
     &__list {
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-between;
+      justify-content: flex-start;
+      width: calc(100% - 20px);
+      margin: 0 auto;
     }
 
     &__item {
-      width: calc(50% - 15px);
-      margin: 0;
-
-      &:nth-last-child(2) {
-        margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      width: calc(50% - 20px);
+      height: auto;
+      padding: 0;
+      margin-top: 30px;
+      margin-right: 30px;
+      margin-bottom: 0;
+  
+      &:first-child {
+        margin-top: 0;
+        margin-right: 30px;
       }
 
-      &:last-child {
-        margin-top: 30px;
+      &:nth-child(2) {
+        margin-top: 0;
+        margin-right: 0;
       }
+
+      &:nth-child(4) {
+        margin-top: 30px;
+        margin-right: 0;
+      }
+
+      &:nth-child(5) {
+        margin: 30px 30px 0 0;
+      }
+    }
+
+    &__info {
+      margin-top: auto;
     }
 
     &__browsers {
       display: flex;
       align-items: center;
+      padding-bottom: 0;
 
       b {
         margin-right: 5px;
@@ -691,20 +717,46 @@ h1, h2, h3, h4, h5, h6 {
   .works {
     &__list {
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: flex-start;
       width: 1024px;
     }
 
     &__item {
-      width: calc(33.3333% - 15px);
+      width: calc(33.3333% - 20px);
+      height: auto;
+      margin-right: 30px;
 
-      &:nth-last-child(2) {
-        margin-top: 0px;
+      &:first-child {
+        margin-right: 30px;
+      }
+
+      &:nth-child(2) {
+        margin-right: 30px;
+        margin-left: 0;
+      }
+
+      &:nth-child(3) {
+        margin-top: 0;
+        margin-right: 0;
+      }
+
+      &:nth-child(4) {
+        margin-top: 30px;
+        margin-right: 30px;
+        margin-left: 0;
       }
 
       &:last-child {
         margin-top: 30px;
       }
+    }
+    
+    &__info {
+      padding: 0 5px;
+    }
+
+    &__browsers {
+      padding-bottom: 0;
     }
   }
 }
