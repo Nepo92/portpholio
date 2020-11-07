@@ -154,110 +154,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 4px;
 }
 
-.top-bar__checkbox:checked ~ .nav {
-  right: 0;
-}
-
-.top-bar__checkbox:checked ~ .top-bar__button {
-  position: fixed;
-  right: 13px;
-}
-
-.top-bar__checkbox:checked ~ .top-bar__button .top-bar__row {
-  margin-top: 0;
-  -webkit-animation-name: menuOpened_row;
-          animation-name: menuOpened_row;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-duration: .2s;
-          animation-duration: .2s;
-  -webkit-animation-delay: .4s;
-          animation-delay: .4s;
-}
-
-.top-bar__checkbox:checked ~ .top-bar__button .top-bar__row::before {
-  margin-top: 0;
-  -webkit-transition-property: margin;
-  -o-transition-property: margin;
-  transition-property: margin;
-  -webkit-transition-duration: .2s;
-       -o-transition-duration: .2s;
-          transition-duration: .2s;
-  -webkit-animation-name: menuOpened_rowBefore;
-          animation-name: menuOpened_rowBefore;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-duration: .2s;
-          animation-duration: .2s;
-  -webkit-animation-delay: .4s;
-          animation-delay: .4s;
-}
-
-.top-bar__checkbox:checked ~ .top-bar__button .top-bar__row::after {
-  margin-top: 0;
-  -webkit-transition-property: margin;
-  -o-transition-property: margin;
-  transition-property: margin;
-  -webkit-transition-duration: .2s;
-       -o-transition-duration: .2s;
-          transition-duration: .2s;
-  -webkit-animation-name: menuOpened_rowBefore;
-          animation-name: menuOpened_rowBefore;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-duration: .2s;
-          animation-duration: .2s;
-  -webkit-animation-delay: .4s;
-          animation-delay: .4s;
-}
-
-.top-bar__checkbox:not(checked) ~ .top-bar__button .top-bar__row {
-  -webkit-animation-name: menuClosed_row;
-          animation-name: menuClosed_row;
-  -webkit-animation-duration: .2s;
-          animation-duration: .2s;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
-}
-
-.top-bar__checkbox:not(checked) ~ .top-bar__button .top-bar__row::before {
-  margin-top: 8px;
-  -webkit-transition-property: margin;
-  -o-transition-property: margin;
-  transition-property: margin;
-  -webkit-transition-delay: .2s;
-       -o-transition-delay: .2s;
-          transition-delay: .2s;
-  -webkit-transition-duration: .2s;
-       -o-transition-duration: .2s;
-          transition-duration: .2s;
-  -webkit-animation-name: menuClosed_rowBefore;
-          animation-name: menuClosed_rowBefore;
-  -webkit-animation-duration: .2s;
-          animation-duration: .2s;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
-}
-
-.top-bar__checkbox:not(checked) ~ .top-bar__button .top-bar__row::after {
-  margin-top: -8px;
-  -webkit-transition-property: margin;
-  -o-transition-property: margin;
-  transition-property: margin;
-  -webkit-transition-delay: .2s;
-       -o-transition-delay: .2s;
-          transition-delay: .2s;
-  -webkit-transition-duration: .2s;
-       -o-transition-duration: .2s;
-          transition-duration: .2s;
-  -webkit-animation-name: menuClosed_rowAfter;
-          animation-name: menuClosed_rowAfter;
-  -webkit-animation-duration: .2s;
-          animation-duration: .2s;
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
-}
-
 @-webkit-keyframes menuOpened_row {
   0% {
     -webkit-transform: rotate(0deg);
@@ -386,6 +282,74 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
+}
+
+.top-bar__checkbox:checked ~ .nav {
+  right: 0;
+}
+
+.top-bar__checkbox:checked ~ .top-bar__button {
+  position: fixed;
+  right: 13px;
+}
+
+.top-bar__checkbox:checked ~ .top-bar__button .top-bar__row {
+  margin-top: 0;
+  -webkit-animation-name: menuOpened_row;
+          animation-name: menuOpened_row;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+}
+
+.top-bar__checkbox:checked ~ .top-bar__button .top-bar__row::before {
+  margin-top: 0;
+  -webkit-animation-name: menuOpened_rowBefore;
+          animation-name: menuOpened_rowBefore;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+}
+
+.top-bar__checkbox:checked ~ .top-bar__button .top-bar__row::after {
+  margin-top: 0;
+  -webkit-animation-name: menuOpened_rowBefore;
+          animation-name: menuOpened_rowBefore;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+}
+
+.top-bar__checkbox:not(checked) ~ .top-bar__button .top-bar__row {
+  -webkit-animation-name: menuClosed_row;
+          animation-name: menuClosed_row;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+.top-bar__checkbox:not(checked) ~ .top-bar__button .top-bar__row::before {
+  margin-top: 8px;
+  -webkit-animation-name: menuClosed_rowBefore;
+          animation-name: menuClosed_rowBefore;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+.top-bar__checkbox:not(checked) ~ .top-bar__button .top-bar__row::after {
+  margin-top: -8px;
+  -webkit-animation-name: menuClosed_rowAfter;
+          animation-name: menuClosed_rowAfter;
+  -webkit-animation-duration: .2s;
+          animation-duration: .2s;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
 }
 
 .nav {

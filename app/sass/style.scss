@@ -118,121 +118,110 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  &__checkbox:checked ~ .nav {
-    right: 0;
+  @keyframes menuOpened_row {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+  
+  @keyframes menuOpened_rowBefore {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+  
+  @keyframes menuOpened_rowAfter {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      display: none;
+    }
+  }
+  
+  @keyframes menuClosed_row {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes menuClosed_rowBefore {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes menuClosed_rowAfter {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
   }
 
-  &__checkbox:checked ~ .top-bar__button {
-    position: fixed;
-    right: 13px;
-  }
+  &__checkbox {
+    &:checked ~ .nav {
+      right: 0;
+    }
 
-  &__checkbox:checked ~ .top-bar__button .top-bar__row {
-    margin-top: 0;
-    animation-name: menuOpened_row;
-    animation-fill-mode: forwards;
-    animation-duration: .2s;
-    animation-delay: .4s;
-  }
+    &:checked ~ .top-bar__button {
+      position: fixed;
+      right: 13px;
+    }
 
-  &__checkbox:checked ~ .top-bar__button .top-bar__row::before {
-    margin-top: 0;
-    transition-property: margin;
-    transition-duration: .2s;
-    animation-name: menuOpened_rowBefore;
-    animation-fill-mode: forwards;
-    animation-duration: .2s;
-    animation-delay: .4s;
-  }
+    &:checked ~ .top-bar__button .top-bar__row {
+      margin-top: 0;
+      animation-name: menuOpened_row;
+      animation-fill-mode: forwards;
+      animation-duration: .2s;
+    }
 
-  &__checkbox:checked ~ .top-bar__button .top-bar__row::after {
-    margin-top: 0;
-    transition-property: margin;
-    transition-duration: .2s;
-    animation-name: menuOpened_rowBefore;
-    animation-fill-mode: forwards;
-    animation-duration: .2s;
-    animation-delay: .4s;
-  }
+    &:checked ~ .top-bar__button .top-bar__row::before {
+      margin-top: 0;
+      animation-name: menuOpened_rowBefore;
+      animation-fill-mode: forwards;
+      animation-duration: .2s;
+    }
 
-  &__checkbox:not(checked) ~ .top-bar__button .top-bar__row {
-    animation-name: menuClosed_row;
-    animation-duration: .2s;
-    animation-delay: 0;
-  }
+    &:checked ~ .top-bar__button .top-bar__row::after {
+      margin-top: 0;
+      animation-name: menuOpened_rowBefore;
+      animation-fill-mode: forwards;
+      animation-duration: .2s;
+    }
 
-  &__checkbox:not(checked) ~ .top-bar__button .top-bar__row::before {
-    margin-top: 8px;
-    transition-property: margin;
-    transition-delay: .2s;
-    transition-duration: .2s;
-    animation-name: menuClosed_rowBefore;
-    animation-duration: .2s;
-    animation-delay: 0;
-  }
+    &:not(checked) ~ .top-bar__button .top-bar__row {
+      animation-name: menuClosed_row;
+      animation-duration: .2s;
+      animation-delay: 0;
+    }
 
-  &__checkbox:not(checked) ~ .top-bar__button .top-bar__row::after {
-    margin-top: -8px;
-    transition-property: margin;
-    transition-delay: .2s;
-    transition-duration: .2s;
-    animation-name: menuClosed_rowAfter;
-    animation-duration: .2s;
-    animation-delay: 0;
-  }
-}
+    &:not(checked) ~ .top-bar__button .top-bar__row::before {
+      margin-top: 8px;
+      animation-name: menuClosed_rowBefore;
+      animation-duration: .2s;
+      animation-delay: 0;
+    }
 
-@keyframes menuOpened_row {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(45deg);
-  }
-}
-
-@keyframes menuOpened_rowBefore {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(90deg);
-  }
-}
-
-@keyframes menuOpened_rowAfter {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    display: none;
-  }
-}
-
-@keyframes menuClosed_row {
-  0% {
-    transform: rotate(45deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes menuClosed_rowBefore {
-  0% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes menuClosed_rowAfter {
-  0% {
-    transform: rotate(90deg);
-  }
-  100% {
-    transform: rotate(0deg);
+    &:not(checked) ~ .top-bar__button .top-bar__row::after {
+      margin-top: -8px;
+      animation-name: menuClosed_rowAfter;
+      animation-duration: .2s;
+      animation-delay: 0;
+    }
   }
 }
 
