@@ -1,0 +1,13 @@
+@mixin section {
+}
+
+@mixin section__title {
+  font-size: 28px;
+  text-align: center;
+}
+
+@mixin section__content {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 40px;
+}
