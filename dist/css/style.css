@@ -5,15 +5,10 @@
           box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "Mali";
-  src: "../fonts/Mali-Regular.ttf";
-}
-
 body {
   margin: 0;
   padding: 0;
-  font-family: "Mali", sans-serif;
+  font-family: sans-serif;
   cursor: default;
 }
 
@@ -729,6 +724,7 @@ p {
   margin-right: 20px;
   background-color: white;
   border-radius: 7px;
+  cursor: pointer;
   opacity: 1;
   -webkit-transition-duration: 1s;
        -o-transition-duration: 1s;
@@ -986,7 +982,6 @@ p {
 .order__button {
   height: 30px;
   margin-top: 20px;
-  cursor: pointer;
 }
 
 .order__feedback {

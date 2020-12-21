@@ -27,7 +27,7 @@
     Имя: $name<br>
     Фамилия: $lastname<br>
     E-mail: $email<br>
-    Шаблон: http://vhost145113.ispsite.ru/files$template<br>
+    Шаблон: http://f0497037.xsph.ru/files/$template<br>
     Описание: $description
   ";
 
@@ -35,7 +35,7 @@
     Имя: $name
     Фамилия: $lastname
     E-mail: $email
-    Шаблон: http://vhost145113.ispsite.ru/files/$template
+    Шаблон: http://f0497037.xsph.ru/files/$template
     Описание: $description
   ";
 

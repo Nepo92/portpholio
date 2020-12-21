@@ -308,9 +308,13 @@ function order() {
   });
 }
 
-anchor();
-order();
-scrollToTop();
+function portpholio() {
+  anchor();
+  order();
+  scrollToTop();
+}
+
+portpholio();
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.order__form');
