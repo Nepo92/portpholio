@@ -45,7 +45,7 @@
     //Server settings
 
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-    $mail->isSMTP();                                          
+    $mail->isSMTP();
     $mail->Host = 'ssl://smtp.mail.ru';
     $mail->SMTPAuth = true;
     $mail->Username = 'eremeev.a.e@mail.ru';

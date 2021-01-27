@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
   <link rel="stylesheet" href="./css/style.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
   <!-- SVG4everybody -->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.js"></script>
   <script>svg4everybody()</script>
 </head>
@@ -202,30 +200,30 @@
         <h2 class="works__title">Мои работы</h2>
         <div id="works__content" class="works__content">
 
-          <a href="https://nepo92.github.io/Olios/dist/" target="_blank" class="works__column">
+          <div tabindex="0" onclick='window.open("https://nepo92.github.io/Olios/dist/")' class="works__column">
             <img src="./img/works/Olios.jpg" alt="Olios" class="works__img" />
             <span class="works__name">Olios</span>
-          </a>
+          </div>
 
-          <a href="https://nepo92.github.io/Piroll/dist/" target="_blank" class="works__column">
+          <div tabindex="0" onclick='window.open("https://nepo92.github.io/Piroll/dist/")' class="works__column">
             <img src="./img/works/Piroll.jpg" alt="Pirol" class="works__img" />
             <span class="works__name">Piroll</span>
-          </a>
+          </div>
 
-          <a href="https://nepo92.github.io/axit/dist/" target="_blank" class="works__column">
+          <div tabindex="0" onclick='window.open("https://nepo92.github.io/axit/dist/")' class="works__column">
             <img src="./img/works/AXit.jpg" alt="AXit" class="works__img" />
             <span class="works__name">AXit</span>
-          </a>
+          </div>
 
-          <a href="https://nepo92.github.io/multiSelect-js-native-/dist/" target="_blank" class="works__column">
+          <div tabindex="0" onclick='window.open("https://nepo92.github.io/multiSelect-js-native-/dist/")' class="works__column">
             <img src="./img/works/Multiselect.jpg" alt="Multiselect" class="works__img" />
             <span class="works__name">Multiselect</span>
-          </a>
+          </div>
 
-          <a href="https://nepo92.github.io/select-js/dist/" target="_blank" class="works__column">
+          <div tabindex="0" onclick='window.open("https://nepo92.github.io/select-js/dist/")' class="works__column">
             <img src="./img/works/Select.jpg" alt="Select" class="works__img" />
             <span class="works__name">Select</span>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -245,12 +243,14 @@
       <div class="order__inner">
         <div class="order__flex">
 
-          <form method="POST" action="order.php" class="order__form" name="form" enctype="multipart/form-data">
+          <form method="POST" id="order__form" class="order__form" enctype="multipart/form-data">
             <h2 class="order__title">Сделать заказ</h2>
 
-            <input type="text" name="name" placeholder="Имя*" required>
+            <input type="text" name="name" placeholder="Имя*">
+            <p class="order__error"></p>
             <input type="text" name="lastname" placeholder="Фамилия">
-            <input type="email" name="email" placeholder="E-mail*" required>
+            <input type="email" name="email" placeholder="E-mail*">
+            <p class="order__error"></p>
             <input type="file" name="template">
 
             <textarea name="description" class="order__description"
@@ -277,6 +277,8 @@
         </div>
       </div>
       <!-- Order succes popup -->
+
+      <img class="order__preloader" src="./img/preloader.svg" alt="">
 
       <div class="order__popup popup">
         <div class="popup__window">

@@ -198,11 +198,9 @@
     transition: all 0.2s linear;
     fill: rgba(white, 0.5);
 
-    &:last-child {
-      margin-right: 0;
-    }
-
     &:hover {
+      width: 36px;
+      height: 36px;
       fill: white;
     }
   }
@@ -225,12 +223,16 @@
     width: calc(50% - 5px);
     margin-top: 10px;
     padding: 0 10px 10px 10px;
+    opacity: 0;
+    transition: all 0.5s linear;
 
     &:nth-child(odd) {
       margin-right: 10px;
     }
 
     &:first-child {
+      position: relative;
+      top: 50px;
       margin-top: 0;
 
       .html {
@@ -261,7 +263,10 @@
     }
 
     &:nth-child(2) {
+      position: relative;
+      top: 50px;
       margin-top: 0;
+      transition-delay: 0.2s;
 
       .technologies__icon {
         fill: #1572b6;
@@ -275,6 +280,10 @@
     }
 
     &:nth-child(3) {
+      position: relative;
+      top: 50px;
+      transition-delay: 0.4s;
+
       .js {
         &__bg {
           position: absolute;
@@ -304,6 +313,10 @@
     }
 
     &:nth-child(4) {
+      position: relative;
+      top: 50px;
+      transition-delay: 0.6s;
+
       .technologies__icon {
         fill: #eb4a4b;
       }
@@ -316,6 +329,10 @@
     }
 
     &:nth-child(5) {
+      position: relative;
+      top: 50px;
+      transition-delay: 1.4s;
+
       .technologies__icon {
         fill: #5b4282;
       }
@@ -328,8 +345,11 @@
     }
 
     &:nth-child(6) {
+      position: relative;
+      top: 50px;
       display: flex;
       flex-direction: column;
+      transition-delay: 1.2s;
 
       .webp {
         position: relative;
@@ -399,6 +419,10 @@
     }
 
     &:nth-child(7) {
+      position: relative;
+      top: 50px;
+      transition-delay: 1s;
+
       .svg {
         position: relative;
         &__pen {
@@ -474,6 +498,10 @@
     }
 
     &:nth-child(8) {
+      position: relative;
+      top: 50px;
+      transition-delay: 0.8s;
+
       .git {
         &__bg {
           position: absolute;
@@ -663,6 +691,7 @@
 }
 
 .order {
+  position: relative;
   padding: 0 20px;
   background-color: rgb(236, 236, 236);
 
@@ -673,6 +702,8 @@
     margin-top: 40px;
 
     input {
+      position: relative;
+      top: 50px;
       height: 35px;
       margin-top: 20px;
       padding: 0 10px;
@@ -683,18 +714,32 @@
       border-bottom: 1px solid rgb(151, 150, 150);
       border-left: 0;
       outline: none;
-      transition: all 0.2s linear;
+      opacity: 0;
+      transition: all 0.5s linear;
+
+      &:nth-child(2) {
+        transition-delay: 0s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 0.2s;
+      }
+
+      &:nth-child(5) {
+        transition-delay: 0.4s;
+      }
 
       &:-webkit-autofill {
         box-shadow: inset 0 0 0 50px rgb(236, 236, 236) !important;
       }
 
-      &:nth-child(5) {
+      &:nth-child(7) {
         display: flex;
         align-items: center;
         margin-top: 20px;
         padding: 0;
         border-bottom: 0;
+        transition-delay: 0.6s;
 
         &:focus {
           padding: 0;
@@ -705,6 +750,10 @@
       &:focus {
         border-bottom: 1px solid rgb(0, 0, 0);
       }
+
+      &.error {
+        border-bottom: 1px solid red;
+      }
     }
   }
 
@@ -713,6 +762,9 @@
   }
 
   &__description {
+    position: relative;
+    top: 50px;
+    right: 150px;
     height: 130px;
     margin-top: 10px;
     padding: 5px 10px;
@@ -723,7 +775,9 @@
     border-bottom: 1px solid rgb(151, 150, 150);
     border-left: 0;
     outline: none;
-    transition: all 0.2s linear;
+    opacity: 0;
+    transition: all 0.5s linear;
+    transition-delay: 0.8s;
     resize: none;
 
     &:focus {
@@ -734,6 +788,10 @@
   &__button {
     height: 30px;
     margin-top: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s linear;
+    transition-delay: 1.2s;
   }
 
   &__feedback {
@@ -760,34 +818,50 @@
     }
   }
 
-  &__popup {
+  &__error {
+    color: red;
+  }
+
+  &__preloader {
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.2s linear;
+    pointer-events: none;
   }
 }
 
-.propup {
-  display: none;
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: rgba(black, 0.8);
+  background-color: rgba(black, 0.5);
+  opacity: 0;
+  transition: all 0.2s linear;
+  pointer-events: none;
 
   &__window {
     position: relative;
+    top: -100%;
+    left: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: calc(100% - 20px);
     height: auto;
-    margin-top: -70vh;
     padding: 40px 20px;
     font-size: 10px;
     background-color: white;
     border-radius: 10px;
+    transform: translateX(-50%);
+    opacity: 0;
     transition: all 0.2s linear;
   }
 
@@ -795,12 +869,11 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    z-index: 11;
+    z-index: 2222;
     display: flex;
     width: 15px;
     height: 15px;
     cursor: pointer;
-    opacity: 1;
     transition: all 0.2s linear;
 
     &::before {
@@ -825,6 +898,10 @@
       content: "";
     }
   }
+}
+
+.popup.active .popup__window {
+  top: 0;
 }
 
 .up {
@@ -1165,7 +1242,6 @@
 
     &__button {
       margin-top: 30px;
-      transition: all 0.2s linear;
     }
 
     &__feedback {

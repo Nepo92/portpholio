@@ -1,3 +1,5 @@
+/* Slider */
+
 export default class Slider {
   constructor(selector, options) {
     this.slider = document.querySelector(selector);
@@ -275,42 +277,10 @@ function scrollToTop() {
     }
   });
 }
-/* Order Now */
-
-function order() {
-  /* Вадилацция формы */
-
-  const button = document.querySelector('.order__button');
-
-  button.setAttribute('disabled', 'disabled');
-
-  const form = document.querySelector('.order__form');
-  const inputs = document.querySelectorAll('input');
-
-  form.addEventListener('keydown', () => {
-    if (inputs[1].value !== '' && inputs[3].value !== '') {
-      button.removeAttribute('disabled');
-      button.style.cursor = 'pointer';
-    } else {
-      button.setAttribute('disabled', 'disabled');
-      button.style.cursor = 'default';
-    }
-  });
-
-  form.addEventListener('change', () => {
-    if (inputs[1].value !== '' && inputs[3].value !== '') {
-      button.removeAttribute('disabled');
-      button.style.cursor = 'pointer';
-    } else {
-      button.setAttribute('disabled', 'disabled');
-      button.style.cursor = 'default';
-    }
-  });
-}
 
 function portpholio() {
   anchor();
-  order();
+  // order();
   scrollToTop();
 }
 
