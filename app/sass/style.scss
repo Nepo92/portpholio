@@ -38,7 +38,7 @@
 
     &:checked ~ .top-bar__nav {
       right: 0;
-      transition: all 0.2s linear;
+      transition: right 0.3s linear;
     }
 
     &:checked ~ .top-bar__button {
@@ -80,6 +80,8 @@
     height: 100vh;
     background-color: rgba(black, 0.97);
     box-shadow: -3px 0 10px 0 rgba(black, 0.5);
+    transition-duration: 0s;
+    transition-property: position;
   }
 
   &__menu {
@@ -210,7 +212,11 @@
   @include section;
 
   &__title {
+    position: relative;
+    top: 50px;
     padding-top: 40px;
+    opacity: 0;
+    transition: all 0.3s linear;
     @include section__title;
   }
 
@@ -220,11 +226,13 @@
   }
 
   &__column {
+    position: relative;
+    top: 50px;
     width: calc(50% - 5px);
     margin-top: 10px;
     padding: 0 10px 10px 10px;
     opacity: 0;
-    transition: all 0.5s linear;
+    transition: opacity 0.3s, top 0.3s;
 
     &:nth-child(odd) {
       margin-right: 10px;
@@ -232,20 +240,19 @@
 
     &:first-child {
       position: relative;
-      top: 50px;
       margin-top: 0;
 
       .html {
         &__bg {
           position: absolute;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #ff5722;
         }
 
         &__chars {
           position: relative;
           z-index: 1;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #fff;
         }
       }
@@ -264,11 +271,10 @@
 
     &:nth-child(2) {
       position: relative;
-      top: 50px;
       margin-top: 0;
-      transition-delay: 0.2s;
 
       .technologies__icon {
+        transition: fill 0.2s linear;
         fill: #1572b6;
       }
 
@@ -281,20 +287,18 @@
 
     &:nth-child(3) {
       position: relative;
-      top: 50px;
-      transition-delay: 0.4s;
 
       .js {
         &__bg {
           position: absolute;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #f0db4f;
         }
 
         &__chars {
           position: relative;
           z-index: 1;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #323330;
         }
       }
@@ -314,10 +318,9 @@
 
     &:nth-child(4) {
       position: relative;
-      top: 50px;
-      transition-delay: 0.6s;
 
       .technologies__icon {
+        transition: fill 0.2s linear;
         fill: #eb4a4b;
       }
 
@@ -330,8 +333,6 @@
 
     &:nth-child(5) {
       position: relative;
-      top: 50px;
-      transition-delay: 1.4s;
 
       .technologies__icon {
         fill: #5b4282;
@@ -346,17 +347,15 @@
 
     &:nth-child(6) {
       position: relative;
-      top: 50px;
       display: flex;
       flex-direction: column;
-      transition-delay: 1.2s;
 
       .webp {
         position: relative;
 
         &__border {
           position: relative;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #303c42;
         }
 
@@ -364,7 +363,7 @@
           position: absolute;
           z-index: 1;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #57c1ef;
         }
 
@@ -372,7 +371,7 @@
           position: absolute;
           z-index: 1;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #7cb342;
         }
 
@@ -380,7 +379,7 @@
           position: absolute;
           z-index: 1;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #303c42;
         }
 
@@ -388,7 +387,7 @@
           position: absolute;
           z-index: 1;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #ffcb29;
         }
       }
@@ -420,50 +419,48 @@
 
     &:nth-child(7) {
       position: relative;
-      top: 50px;
-      transition-delay: 1s;
 
       .svg {
         position: relative;
         &__pen {
           position: absolute;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #f5b955;
         }
 
         &__afterPen {
           position: absolute;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #d7d7e6;
         }
 
         &__brush {
           position: absolute;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #e8ab82;
         }
 
         &__color {
           position: absolute;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #ff5a5a;
         }
 
         &__inside {
           position: absolute;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #9bbeff;
         }
 
         &__border {
           position: absolute;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #333333;
         }
       }
@@ -499,14 +496,12 @@
 
     &:nth-child(8) {
       position: relative;
-      top: 50px;
-      transition-delay: 0.8s;
 
       .git {
         &__bg {
-          position: absolute;
+          position: relative;
           width: 100%;
-          transition: all 0.2s linear;
+          transition: fill 0.2s linear;
           fill: #dd4c35;
         }
       }
@@ -524,7 +519,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    transition: all 0.2s linear;
   }
 
   &__name {
@@ -539,10 +533,14 @@
   @include section;
 
   &__inner {
+    position: relative;
+    top: 50px;
     display: inline-block;
     width: 100%;
     height: auto;
     padding-bottom: 40px;
+    opacity: 0;
+    transition: all 0.3s linear;
   }
 
   &__title {
@@ -675,17 +673,25 @@
   @include section;
 
   &__title {
+    position: relative;
+    top: 50px;
     padding-top: 40px;
+    opacity: 1;
+    transition: all 0.3s linear;
     @include section__title;
   }
 
   &__content {
+    position: relative;
+    top: 50px;
     display: flex;
     justify-content: center;
     padding-right: 10px;
     padding-bottom: 40px;
     padding-left: 10px;
     text-align: center;
+    opacity: 1;
+    transition: all 0.3s linear;
     @include section__content;
   }
 }
@@ -711,7 +717,7 @@
       background-color: transparent !important;
       border-top: 0;
       border-right: 0;
-      border-bottom: 1px solid rgb(151, 150, 150);
+      border-bottom: 2px solid rgb(151, 150, 150);
       border-left: 0;
       outline: none;
       opacity: 0;
@@ -758,7 +764,11 @@
   }
 
   &__title {
+    position: relative;
+    top: 50px;
     text-align: center;
+    opacity: 0;
+    transition: all 0.3s;
   }
 
   &__description {
