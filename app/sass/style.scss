@@ -216,7 +216,7 @@
     top: 50px;
     padding-top: 40px;
     opacity: 0;
-    transition: all 0.3s linear;
+    transition: opacity 0.3s linear, top 0.3s linear;
     @include section__title;
   }
 
@@ -232,7 +232,7 @@
     margin-top: 10px;
     padding: 0 10px 10px 10px;
     opacity: 0;
-    transition: opacity 0.3s, top 0.3s;
+    transition: opacity 0.3s linear, top 0.3s linear;
 
     &:nth-child(odd) {
       margin-right: 10px;
@@ -335,6 +335,7 @@
       position: relative;
 
       .technologies__icon {
+        transition: fill 0.2s linear;
         fill: #5b4282;
       }
 
@@ -419,42 +420,31 @@
 
     &:nth-child(7) {
       position: relative;
+      display: flex;
+      flex-direction: column;
 
       .svg {
         position: relative;
-        &__pen {
+
+        &__head {
           position: absolute;
           width: 100%;
           transition: fill 0.2s linear;
           fill: #f5b955;
         }
 
-        &__afterPen {
-          position: absolute;
+        &__chars {
+          position: relative;
           width: 100%;
           transition: fill 0.2s linear;
-          fill: #d7d7e6;
+          fill: #f1f1f1;
         }
 
-        &__brush {
+        &__char {
           position: absolute;
           width: 100%;
           transition: fill 0.2s linear;
-          fill: #e8ab82;
-        }
-
-        &__color {
-          position: absolute;
-          width: 100%;
-          transition: fill 0.2s linear;
-          fill: #ff5a5a;
-        }
-
-        &__inside {
-          position: absolute;
-          width: 100%;
-          transition: fill 0.2s linear;
-          fill: #9bbeff;
+          fill: #f1f1f1;
         }
 
         &__border {
@@ -467,24 +457,16 @@
 
       &:hover {
         .svg {
-          &__pen {
+          &__head {
             fill: #e9970a;
           }
 
-          &__afterPen {
-            fill: #a3a3a3;
+          &__chars {
+            fill: white;
           }
 
-          &__brush {
-            fill: #d67b3f;
-          }
-
-          &__color {
-            fill: #f02a2a;
-          }
-
-          &__inside {
-            fill: #5c8be4;
+          &__char {
+            fill: white;
           }
 
           &__border {
@@ -497,19 +479,15 @@
     &:nth-child(8) {
       position: relative;
 
-      .git {
-        &__bg {
-          position: relative;
-          width: 100%;
-          transition: fill 0.2s linear;
-          fill: #dd4c35;
-        }
+      .git svg {
+        position: relative;
+        width: 100%;
+        transition: fill 0.2s linear;
+        fill: #dd4c35;
       }
 
-      &:hover {
-        .git__bg {
-          fill: #d13b24;
-        }
+      &:hover svg {
+        fill: #d13b24;
       }
     }
   }
@@ -522,6 +500,7 @@
   }
 
   &__name {
+    position: relative;
     margin-top: 10px;
     text-align: center;
   }
@@ -540,7 +519,7 @@
     height: auto;
     padding-bottom: 40px;
     opacity: 0;
-    transition: all 0.3s linear;
+    transition: opacity 0.3s linear, top 0.3s linear;
   }
 
   &__title {
@@ -677,7 +656,7 @@
     top: 50px;
     padding-top: 40px;
     opacity: 1;
-    transition: all 0.3s linear;
+    transition: opacity 0.3s linear, top 0.3s linear;
     @include section__title;
   }
 
@@ -691,7 +670,7 @@
     padding-left: 10px;
     text-align: center;
     opacity: 1;
-    transition: all 0.3s linear;
+    transition: opacity 0.3s linear, top 0.3s linear;
     @include section__content;
   }
 }
@@ -1146,7 +1125,7 @@
 
 /* Descktop */
 
-@media (min-width: 1477px) {
+@media (min-width: 1550px) {
   .top-bar {
     left: 50%;
     width: 1235px;

@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
       setTimeout(() => {
         technologies[i].style.opacity = '1';
         technologies[i].style.top = '0';
-      }, i * 200);
+      }, i * 300);
     }
   }
 

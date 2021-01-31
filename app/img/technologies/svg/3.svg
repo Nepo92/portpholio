@@ -1,5 +1,3 @@
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<polygon style="fill:#D7D7E6;" points="361.83,226.309 309.336,173.815 299.375,174.366 258.548,215.193 317.041,273.687 
-	361.83,228.897 "/>
-  </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<path d="M17.568,7.73a2.218,2.218,0,1,0-3.137,0V24.382a2.218,2.218,0,1,0,3.137,0Z" style="fill:#ffb13b;stroke:#000;stroke-width:3.73000001907349px"/>
+</svg>
