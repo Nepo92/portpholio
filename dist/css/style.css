@@ -83,6 +83,10 @@ p {
   margin-top: 6px;
 }
 
+.top-bar__checkbox:not(checked) ~ .top-bar__nav .top-bar__layer {
+  right: -20px;
+}
+
 .top-bar__checkbox:not(checked) ~ .top-bar__nav {
   -webkit-transition-duration: 0s;
   -o-transition-duration: 0s;
@@ -90,6 +94,10 @@ p {
   -webkit-transition-property: position;
   -o-transition-property: position;
   transition-property: position;
+}
+
+.top-bar__checkbox:checked ~ .top-bar__nav .top-bar__layer {
+  right: 0;
 }
 
 .top-bar__checkbox:checked ~ .top-bar__nav {
@@ -127,7 +135,7 @@ p {
 
 .top-bar__button {
   position: relative;
-  z-index: 4;
+  z-index: 3;
   cursor: pointer;
 }
 
@@ -135,7 +143,7 @@ p {
   position: fixed;
   top: 0;
   right: -100%;
-  z-index: 3;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,6 +167,8 @@ p {
 }
 
 .top-bar__menu {
+  position: relative;
+  z-index: 2;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -185,6 +195,15 @@ p {
 
 .top-bar__item:first-child {
   margin-top: 0;
+}
+
+.top-bar__layer {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
 }
 
 .burger {
@@ -1237,6 +1256,9 @@ p {
     height: 3px;
     background-color: white;
     content: "";
+  }
+  .top-bar__layer {
+    display: none;
   }
   .header__block {
     display: -webkit-box;

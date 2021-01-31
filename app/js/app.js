@@ -278,9 +278,29 @@ function anchor() {
     }, false);
   }
 }
+/* close menu */
+function closeMenu() {
+  const layer = document.querySelector('.top-bar__layer');
+  const menuCheckbox = document.querySelector('.top-bar__checkbox');
+
+  menuCheckbox.addEventListener('change', () => {
+    if (menuCheckbox.checked) {
+      layer.addEventListener('click', () => {
+        menuCheckbox.checked = false;
+      });
+
+      const menuItems = document.querySelectorAll('.top-bar__item');
+
+      menuItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          menuCheckbox.checked = false;
+        });
+      });
+    }
+  });
+}
 
 /* Up */
-
 function scrollToTop() {
   const up = document.querySelector('.up');
 
@@ -297,8 +317,8 @@ function scrollToTop() {
 
 function portpholio() {
   anchor();
-  // order();
   scrollToTop();
+  closeMenu();
 }
 
 portpholio();
