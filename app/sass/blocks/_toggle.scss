@@ -5,3 +5,7 @@
   transition: all 0s linear !important;
   pointer-events: none !important;
 }
+
+.popup.active .popup__window {
+  top: 0;
+}
