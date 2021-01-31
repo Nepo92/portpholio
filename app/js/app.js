@@ -249,19 +249,36 @@ export default class Slider {
 /* Anchors */
 
 function anchor() {
-  const anchors = document.querySelectorAll('a[href*="#"]');
+  const linkNav = document.querySelectorAll('[href^="#"]'); // выбираем все ссылки к якорю на странице
+  const speed = 0.5; // скорость
 
-  anchors.forEach((item) => {
-    item.addEventListener('click', (e) => {
+  for (let i = 0; i < linkNav.length; i++) {
+    linkNav[i].addEventListener('click', function (e) {
       e.preventDefault();
-      const blockID = item.getAttribute('href').substr(1);
-      document.getElementById(blockID).scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    });
-  });
+
+      const offset = window.pageYOffset; // производим прокрутку
+      const hash = this.href.replace(/[^#]*(.*)/, '$1'); // к id элемента, к которому нужно перейти
+      const { top } = document.querySelector(hash).getBoundingClientRect();
+      let start = null;
+
+      function step(time) {
+        if (start === null) start = time;
+        const progress = time - start;
+        const scroll = (top < 0 ? Math.max(offset - progress / speed, offset + top)
+          : Math.min(offset + progress / speed, offset + top));
+
+        window.scrollTo(0, scroll);
+        if (scroll !== offset + top) {
+          requestAnimationFrame(step);
+        } else {
+          location.hash = hash; // URL с хэшем
+        }
+      }
+      requestAnimationFrame(step); // подробнее про функцию анимации [developer.mozilla.org]
+    }, false);
+  }
 }
+
 /* Up */
 
 function scrollToTop() {
@@ -285,5 +302,3 @@ function portpholio() {
 }
 
 portpholio();
-
-console.log(1);
